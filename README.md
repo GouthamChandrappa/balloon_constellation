@@ -43,8 +43,8 @@ balloon-mission-planner/
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/balloon-mission-planner.git
-   cd balloon-mission-planner
+   gh repo clone GouthamChandrappa/balloon_constellation
+   cd balloon_constellation
    ```
 
 2. Install the required dependencies:
