@@ -5,10 +5,15 @@
 The Balloon Constellation Mission Planner is an interactive web application that provides visualization and LLM-powered analysis of WindBorne Systems' global sounding balloon constellation. This tool helps with real-time monitoring, anomaly detection, and launch planning to optimize the constellation's coverage and effectiveness.
 
 ## Video Demo
+<<<<<<< Updated upstream
 /home/goutham/weatther/balloon_constellation.mp4
 <video width="1820" height="1024" autoplay loop muted playsinline>
   <source src="balloon_constellation.mp4" type="video/mp4">
 </video>
+=======
+
+![Balloon Constellation Demo](balloon_constellation.mp4)
+>>>>>>> Stashed changes
 
 ## Features
 
