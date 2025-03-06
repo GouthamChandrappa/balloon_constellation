@@ -1,0 +1,8 @@
+flask==2.2.5
+requests==2.31.0
+numpy
+pandas
+langchain==0.0.267
+openai==0.28.1
+python-dotenv==1.0.0
+gunicorn==21.2.0

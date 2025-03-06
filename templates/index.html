@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon Constellation Mission Planner</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Balloon Constellation Mission Planner</h1>
+        <p>Powered by LLM analysis and real-time data from WindBorne Systems</p>
+    </div>
+    
+    <div class="container">
+        <div class="panel">
+            <h3>Map Visualization</h3>
+            <div class="controls">
+                <div>
+                    <label for="timeSelector">Time:</label>
+                    <select id="timeSelector">
+                        <option value="0">Current</option>
+                        <option value="1">1 hour ago</option>
+                        <option value="3">3 hours ago</option>
+                        <option value="6">6 hours ago</option>
+                        <option value="12">12 hours ago</option>
+                        <option value="18">18 hours ago</option>
+                        <option value="23">23 hours ago</option>
+                    </select>
+                </div>
+                <button id="showTrajectories">Show Trajectories</button>
+                <button id="hideTrajectories">Hide Trajectories</button>
+                <button id="refreshData">Refresh Data</button>
+            </div>
+            <div id="map"></div>
+            <div class="legend" id="mapLegend"></div>
+        </div>
+        
+        <div class="grid">
+            <div class="panel">
+                <h3>LLM-Powered Analysis</h3>
+                <div class="api-key">
+                    <label for="apiKey">OpenAI API Key:</label>
+                    <input type="password" id="apiKey" placeholder="sk-..." style="width: 300px;">
+                    <button id="saveApiKey">Save Key</button>
+                    <p><small>Your API key is stored locally in your browser and is not sent to our servers except when performing analysis.</small></p>
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab active" data-tab="insights">General Insights</div>
+                    <div class="tab" data-tab="anomalies">Anomaly Detection</div>
+                    <div class="tab" data-tab="launch">Launch Recommendations</div>
+                    <div class="tab" data-tab="custom">Custom Question</div>
+                </div>
+                
+                <div class="tab-content active" id="insightsTab">
+                    <p>Get general insights about the current balloon constellation:</p>
+                    <button id="getInsightsButton">Generate Insights</button>
+                    <div id="insightsResult" class="panel" style="margin-top: 10px; display: none;"></div>
+                </div>
+                
+                <div class="tab-content" id="anomaliesTab">
+                    <p>Detect anomalies in the balloon constellation:</p>
+                    <button id="getAnomaliesButton">Detect Anomalies</button>
+                    <div id="anomaliesResult" class="panel" style="margin-top: 10px; display: none;"></div>
+                </div>
+                
+                <div class="tab-content" id="launchTab">
+                    <p>Get recommendations for your next balloon launch:</p>
+                    <button id="getLaunchRecsButton">Get Recommendations</button>
+                    <div id="launchResult" class="panel" style="margin-top: 10px; display: none;"></div>
+                </div>
+                
+                <div class="tab-content" id="customTab">
+                    <p>Ask a custom question about the balloon constellation:</p>
+                    <input type="text" id="question" placeholder="e.g., What patterns do you see in balloon movements?" style="width: 70%;">
+                    <button id="analyzeButton">Analyze</button>
+                    <div id="analysisResult" class="panel" style="margin-top: 10px; display: none;"></div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h3>Constellation Stats</h3>
+                <div id="stats">
+                    <p>Loading stats...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+
+    <!-- Include JavaScript files -->
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+</body>
+</html>
