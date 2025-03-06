@@ -6,7 +6,9 @@ The Balloon Constellation Mission Planner is an interactive web application that
 
 ## Video Demo
 
-![Balloon Constellation Demo](balloon_constellation.gif)
+<video width="1820" height="1024" autoplay loop muted playsinline>
+  <source src="balloon_constellation.mp4" type="video/mp4">
+</video>
 
 ## Features
 
